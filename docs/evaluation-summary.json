@@ -1,0 +1,34 @@
+{
+  "type": "historical_real_calls_not_v5_model_evaluation",
+  "note": "摘要中保留原始指纹；原始轨迹未随公共展示包分发，摘要本身不等于独立复核。",
+  "rounds": [
+    {
+      "version": "v1",
+      "path": "reports/evaluations/20261025T185241Z_holdout_21cb57.json",
+      "score": "21/30",
+      "note": "内部首轮；含真实边界失败，未覆盖",
+      "sha256": "9e6672e8fb977c30e897fe8d497863fd5f93ead032ac31619642afa8d135a977"
+    },
+    {
+      "version": "v2",
+      "path": "reports/evaluations/v2/20261025T191327Z_holdout_v2_e0eb7e.json",
+      "score": "29/30",
+      "note": "25道调用模型、5道规则拒答；不同题库",
+      "sha256": "9d02a7ab1cef4fb2b10eea2a53e963d0cc050f3043d2a872f0e2677346577094"
+    },
+    {
+      "version": "v3",
+      "path": "reports/evaluations/v3/20261025T202428Z_holdout_v3_92fdf5.json",
+      "score": "15/20",
+      "note": "14道调用模型、6道规则处理；保留失败",
+      "sha256": "1b5ab1a7fc59a4126db7ffee31bd017f774f4d12b5249451ee5fa3fa21cc1160"
+    },
+    {
+      "version": "v4",
+      "path": "reports/evaluations/v4/20261025T204556Z_holdout_v4_e271f2.json",
+      "score": "10/10",
+      "note": "6道调用模型、4道规则拒答；不是全文100%正确",
+      "sha256": "a3b0c9fbd1d9201f1acf5a8aef7dde1fd4d98454f3b7be77ed0a46627d8d37da"
+    }
+  ]
+}

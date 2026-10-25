@@ -1,0 +1,12 @@
+{
+  "checked_date": "2026-10-25",
+  "method": "Official Kaggle data-card License links inspected in the browser; Creative Commons deed and legal code read",
+  "sources": [
+    {"provider": "Olist", "title": "Brazilian E-Commerce Public Dataset by Olist", "url": "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce", "observed_license": "CC BY-NC-SA 4.0"},
+    {"provider": "Olist", "title": "Marketing Funnel by Olist", "url": "https://www.kaggle.com/datasets/olistbr/marketing-funnel-olist", "observed_license": "CC BY-NC-SA 4.0"}
+  ],
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "legalcode_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en",
+  "release_controls": ["Source attribution", "Modification notice", "CC BY-NC-SA 4.0 for data-derived materials", "No raw data or SQLite distribution", "No fees, advertisements or live model API", "No endorsement claimed"],
+  "note": "License verification is not a legal opinion or permission for every commercial reuse. Software rights and data rights are distinguished in THIRD_PARTY_NOTICES.md."
+}

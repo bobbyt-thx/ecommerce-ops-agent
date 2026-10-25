@@ -96,8 +96,8 @@ python3 -m ops_agent serve --port 8765
 ops_agent/       只读分析、任务约定、模型协议、校验与网页
 tests/           数值、原始表参考SQL、边界和mock协议回归
 docs/            展示页、案例、演示讲稿、评测摘要与发布清单
-evals/           原冻结题库与清单
-reports/         本地报告、真实调用结果及历史源码归档
+evals/           原冻结题库与清单（仅本地留存，公开包未附）
+reports/         公开审计与技术摘要；完整调用结果和源码归档仅本地留存
 scripts/         非覆盖归档及本地验收辅助工具
 ```
 

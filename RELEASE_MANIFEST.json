@@ -10,8 +10,8 @@
       "bytes": 261
     },
     "README.md": {
-      "sha256": "59e56e6e063436b90fec9ec314e23950df2cf714543ffce724dc30c0e3a18dec",
-      "bytes": 6927
+      "sha256": "ee72765a8d6cedb8574457c4b7af8655f9ba980d5e3b01d00d27ff3bcc9343af",
+      "bytes": 6990
     },
     "THIRD_PARTY_NOTICES.md": {
       "sha256": "385b832b9c776c88855ff6656d657dfd7bf359bd430c276a8529b31e6b43b747",
@@ -33,6 +33,10 @@
       "sha256": "335194d9f3fb462c9e9abf28a44520edc563844af01c879c65734cee894fe7db",
       "bytes": 2057
     },
+    "docs/assets/.gitkeep": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
     "docs/assets/demo-preview.png": {
       "sha256": "6a0dcba4666068562cd43404e1b0b9c1be5ac2cedf1f94053fdeaf374229d955",
       "bytes": 71936
@@ -40,6 +44,10 @@
     "docs/data-license-review.json": {
       "sha256": "913856ba17289914dd74cf9712bb290dc435ab9df718010ee7a5af49e4c260f9",
       "bytes": 1103
+    },
+    "docs/demo/.gitkeep": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
     },
     "docs/demo/business-march.html": {
       "sha256": "cd8a13ebe65c6ae172e8eafa6be2b4361306b363c1fde3a391f77c06178e8fbd",
@@ -64,6 +72,10 @@
     "docs/index.html": {
       "sha256": "4cfa5402527aef8195b30a4a8b9960dc5661fcc2fce8b70b16792fe1d5123e16",
       "bytes": 358
+    },
+    "ops_agent/.gitkeep": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
     },
     "ops_agent/__init__.py": {
       "sha256": "cb3623156d849c0094aae8383527a8eacb96376b47fccc4dfcc78bbc3997f047",
@@ -141,6 +153,10 @@
       "sha256": "091ce30a010a6ea057d2f2f29faeb27b4bd501d7c305a5941241c6aa248ac321",
       "bytes": 30599
     },
+    "reports/.gitkeep": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
     "reports/data_quality.json": {
       "sha256": "e3bbab1c6d1eec71d11f66e503713a08e3bafe10e18001c702e114477aaf0298",
       "bytes": 14396
@@ -161,9 +177,17 @@
       "sha256": "01edc40d2225b135051154d7624e5042aa05ac085d45f511838dcdecffe20518",
       "bytes": 15
     },
+    "scripts/.gitkeep": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
     "scripts/package_portfolio.py": {
       "sha256": "0b69cab1f62974e4bf9ff096944a6a99ff8b2fe1561a1a8ddfe1e30588f1f266",
       "bytes": 2635
+    },
+    "tests/.gitkeep": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
     },
     "tests/test_core.py": {
       "sha256": "d247626e7b0f6b273480b70f61d56559386e1dc09a1a29bb20dc72102c4e09cd",

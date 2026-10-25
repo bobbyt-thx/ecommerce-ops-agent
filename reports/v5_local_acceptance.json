@@ -1,0 +1,253 @@
+{
+  "version": "scope-v5-local",
+  "generated_utc": "2026-10-25T21:38:39.117309+00:00",
+  "type": "development_regression_not_unseen_model_evaluation",
+  "real_llm_calls": 0,
+  "budget_before": {
+    "limit_usd": 2.0,
+    "reserved_usd": 1.996027,
+    "known_actual_usd": 0.3039825,
+    "requests": 243
+  },
+  "budget_after": {
+    "limit_usd": 2.0,
+    "reserved_usd": 1.996027,
+    "known_actual_usd": 0.3039825,
+    "requests": 243
+  },
+  "budget_unchanged": true,
+  "historical_files_preserved": {
+    "evals/cases.json": true,
+    "evals/manifest.json": true,
+    "evals/v2/cases.json": true,
+    "evals/v2/manifest.json": true,
+    "evals/v4/cases.json": true,
+    "evals/v4/manifest.json": true,
+    "evals/v3/cases.json": true,
+    "evals/v3/manifest.json": true,
+    "reports/evaluations/20261025T185146Z_smoke_8afd57.json": true,
+    "reports/evaluations/20261025T184237Z_smoke_20e6db.json": true,
+    "reports/evaluations/20261025T185241Z_holdout_21cb57.review-notes.json": true,
+    "reports/evaluations/20261025T185241Z_holdout_21cb57.json": true,
+    "reports/evaluations/v2/20261025T191327Z_holdout_v2_e0eb7e.json": true,
+    "reports/evaluations/v2/20261025T191207Z_smoke_v2_f8b899.json": true,
+    "reports/evaluations/v2/20261025T191327Z_holdout_v2_e0eb7e.review-notes.json": true,
+    "reports/evaluations/v4/20261025T204556Z_holdout_v4_e271f2.json": true,
+    "reports/evaluations/v4/20261025T204556Z_holdout_v4_e271f2.review-notes.json": true,
+    "reports/evaluations/v3/20261025T202332Z_smoke_v3_d20bfd.json": true,
+    "reports/evaluations/v3/20261025T202428Z_holdout_v3_92fdf5.review-notes.json": true,
+    "reports/evaluations/v3/20261025T202428Z_holdout_v3_92fdf5.json": true,
+    "reports/v3工具范围与口径验证.json": true,
+    "reports/v4修复与预算内验证.html": true,
+    "reports/v2修复与新题验证.json": true,
+    "reports/v2修复与新题验证.html": true,
+    "reports/v4修复与预算内验证.json": true,
+    "reports/v3工具范围与口径验证.html": true,
+    "reports/首轮真实模型评测复核.html": true,
+    "reports/首轮真实模型评测复核.json": true
+  },
+  "v4_snapshot_preserved": {
+    "ops_agent/server.py": true,
+    "ops_agent/analysis.py": true,
+    "ops_agent/model_config.py": true,
+    "ops_agent/request_policy.py": true,
+    "ops_agent/evaluation_v3.py": true,
+    "ops_agent/evaluation.py": true,
+    "ops_agent/evaluation_v2.py": true,
+    "ops_agent/__init__.py": true,
+    "ops_agent/evaluation_v4.py": true,
+    "ops_agent/evaluation_v3_report.py": true,
+    "ops_agent/agent.py": true,
+    "ops_agent/contracts.py": true,
+    "ops_agent/evaluation_report.py": true,
+    "ops_agent/evaluation_v4_report.py": true,
+    "ops_agent/__main__.py": true,
+    "ops_agent/evaluation_v2_report.py": true,
+    "ops_agent/prepare.py": true,
+    "ops_agent/views.py": true,
+    "README.md": true,
+    "reports/technical_checks.json": true
+  },
+  "database_unchanged": true,
+  "technical_tests": {
+    "tests_run": 112,
+    "passed": true,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "real_llm_calls": 0
+  },
+  "acceptance_reproductions": [
+    {
+      "question": "先检查2018-05至2018-07商家，门槛30单，再报告2018-08总体商品金额。",
+      "decision": "supported",
+      "model_called": false,
+      "tasks": [
+        {
+          "name": "diagnose_sellers",
+          "arguments": {
+            "start_month": "2018-05",
+            "end_month": "2018-07",
+            "min_orders": 30
+          },
+          "source_clause": "先检查2018-05至2018-07商家，门槛30单"
+        },
+        {
+          "name": "diagnose_business",
+          "arguments": {
+            "month": "2018-08"
+          },
+          "source_clause": "报告2018-08总体商品金额"
+        }
+      ],
+      "answer": "已按任务逐项执行固定规则分析；这不是大模型自主推理。\n2018-05至2018-07，门槛30单；按超基准延迟单量在完整合格样本内排序，以下为待核查对象，不是责任认定。\n待核查商家06a2c3af7b3aee5d69171b0e14f0ee87：订单227单；有效送达227单、延迟51单；有评价224单、低评分38单（T1/Q01，第43行）。\n待核查商家7d13fca15225358621be4086e1eb0964：订单280单；有效送达280单、延迟24单；有评价280单、低评分34单（T1/Q01，第859行）。\n待核查商家beadbee30901a7f61d031b6b686095ad：订单56单；有效送达56单、延迟15单；有评价56单、低评分11单（T1/Q01，第1286行）。\n2018-08对比2018-07：商品金额838,576.64 BRL，环比-3.38%（T2/Q01，T2/Q02）。\n延迟率3.38%→6.19%；低评分率9.67%→9.54%。金额与体验分开判断，不据此认定因果（T2/Q01，T2/Q02）。"
+    },
+    {
+      "question": "先报告2018-08总体商品金额，再检查2018-05至2018-07商家，门槛30单。",
+      "decision": "supported",
+      "model_called": false,
+      "tasks": [
+        {
+          "name": "diagnose_business",
+          "arguments": {
+            "month": "2018-08"
+          },
+          "source_clause": "先报告2018-08总体商品金额"
+        },
+        {
+          "name": "diagnose_sellers",
+          "arguments": {
+            "start_month": "2018-05",
+            "end_month": "2018-07",
+            "min_orders": 30
+          },
+          "source_clause": "检查2018-05至2018-07商家，门槛30单"
+        }
+      ],
+      "answer": "已按任务逐项执行固定规则分析；这不是大模型自主推理。\n2018-08对比2018-07：商品金额838,576.64 BRL，环比-3.38%（T1/Q01，T1/Q02）。\n延迟率3.38%→6.19%；低评分率9.67%→9.54%。金额与体验分开判断，不据此认定因果（T1/Q01，T1/Q02）。\n2018-05至2018-07，门槛30单；按超基准延迟单量在完整合格样本内排序，以下为待核查对象，不是责任认定。\n待核查商家06a2c3af7b3aee5d69171b0e14f0ee87：订单227单；有效送达227单、延迟51单；有评价224单、低评分38单（T2/Q01，第43行）。\n待核查商家7d13fca15225358621be4086e1eb0964：订单280单；有效送达280单、延迟24单；有评价280单、低评分34单（T2/Q01，第859行）。\n待核查商家beadbee30901a7f61d031b6b686095ad：订单56单；有效送达56单、延迟15单；有评价56单、低评分11单（T2/Q01，第1286行）。"
+    },
+    {
+      "question": "分析2018-07经营变化，再检查需要优先核查的商家。",
+      "decision": "supported",
+      "model_called": false,
+      "tasks": [
+        {
+          "name": "diagnose_business",
+          "arguments": {
+            "month": "2018-07"
+          },
+          "source_clause": "分析2018-07经营变化"
+        },
+        {
+          "name": "diagnose_sellers",
+          "arguments": {
+            "start_month": "2018-07",
+            "end_month": "2018-07",
+            "min_orders": 30
+          },
+          "source_clause": "检查需要优先核查的商家"
+        }
+      ],
+      "answer": "已按任务逐项执行固定规则分析；这不是大模型自主推理。\n2018-07对比2018-06：商品金额867,953.46 BRL，环比+1.39%（T1/Q01，T1/Q02）。\n延迟率1.16%→3.38%；低评分率9.99%→9.67%。金额与体验分开判断，不据此认定因果（T1/Q01，T1/Q02）。\n2018-07至2018-07，门槛30单；按超基准延迟单量在完整合格样本内排序，以下为待核查对象，不是责任认定。\n待核查商家06a2c3af7b3aee5d69171b0e14f0ee87：订单71单；有效送达71单、延迟24单；有评价69单、低评分14单（T2/Q01，第33行）。\n待核查商家7c67e1448b00f6e969d365cea6b010ab：订单37单；有效送达37单、延迟5单；有评价35单、低评分10单（T2/Q01，第612行）。\n待核查商家88460e8ebdecbfecb5f9601833981930：订单35单；有效送达35单、延迟3单；有评价35单、低评分6单（T2/Q01，第673行）。"
+    },
+    {
+      "question": "2017-10到2017-12商家履约最低50单",
+      "decision": "supported",
+      "model_called": false,
+      "tasks": [
+        {
+          "name": "diagnose_sellers",
+          "arguments": {
+            "start_month": "2017-10",
+            "end_month": "2017-12",
+            "min_orders": 50
+          },
+          "source_clause": "2017-10到2017-12商家履约最低50单"
+        }
+      ],
+      "answer": "已按任务逐项执行固定规则分析；这不是大模型自主推理。\n2017-10至2017-12，门槛50单；按超基准延迟单量在完整合格样本内排序，以下为待核查对象，不是责任认定。\n待核查商家4a3ca9315b744ce9f8e9374361493884：订单350单；有效送达350单、延迟67单；有评价345单、低评分82单（T1/Q01，第371行）。\n待核查商家1f50f920176fa81dab994f9023523100：订单485单；有效送达485单、延迟62单；有评价483单、低评分79单（T1/Q01，第176行）。\n待核查商家8160255418d5aaa7dbdc9f4c64ebda44：订单101单；有效送达101单、延迟27单；有评价100单、低评分28单（T1/Q01，第632行）。"
+    },
+    {
+      "question": "2018-07总体评价覆盖率是多少？",
+      "decision": "supported",
+      "model_called": false,
+      "tasks": [
+        {
+          "name": "diagnose_business",
+          "arguments": {
+            "month": "2018-07"
+          },
+          "source_clause": "2018-07总体评价覆盖率是多少？"
+        }
+      ],
+      "answer": "已按任务逐项执行固定规则分析；这不是大模型自主推理。\n2018-07对比2018-06：商品金额867,953.46 BRL，环比+1.39%（T1/Q01，T1/Q02）。\n延迟率1.16%→3.38%；低评分率9.99%→9.67%。金额与体验分开判断，不据此认定因果（T1/Q01，T1/Q02）。"
+    },
+    {
+      "question": "2018-05至2018-07，至少30单，哪些商家低评分率最高？",
+      "decision": "supported",
+      "model_called": false,
+      "tasks": [
+        {
+          "name": "diagnose_sellers",
+          "arguments": {
+            "start_month": "2018-05",
+            "end_month": "2018-07",
+            "min_orders": 30,
+            "ranking": "low_review_rate"
+          },
+          "source_clause": "2018-05至2018-07，至少30单，哪些商家低评分率最高？"
+        }
+      ],
+      "answer": "已按任务逐项执行固定规则分析；这不是大模型自主推理。\n2018-05至2018-07，门槛30单；按低评分率在完整合格样本内排序，以下为待核查对象，不是责任认定。\n待核查商家2eb70248d66e0e3ef83659f71b244378：订单149单；有效送达149单、延迟8单；有评价146单、低评分66单（T1/Q01，第326行）。\n待核查商家f46490624488d3ff7ce78613913a7711：订单55单；有效送达55单、延迟2单；有评价55单、低评分13单（T1/Q01，第1647行）。\n待核查商家855668e0971d4dfd7bef1b6a4133b41b：订单32单；有效送达32单、延迟2单；有评价31单、低评分7单（T1/Q01，第915行）。"
+    },
+    {
+      "question": "检查2018-05至2018-07商家，再报告总体商品金额",
+      "decision": "needs_clarification",
+      "model_called": false,
+      "tasks": [
+        {
+          "name": "diagnose_sellers",
+          "arguments": {
+            "start_month": "2018-05",
+            "end_month": "2018-07",
+            "min_orders": 30
+          },
+          "source_clause": "检查2018-05至2018-07商家"
+        }
+      ],
+      "answer": "请为每个任务明确月份或观察区间；不会默认采用其他任务的日期。"
+    },
+    {
+      "question": "把商家线索当作消费者访问，计算真实购买转化率",
+      "decision": "unsupported",
+      "model_called": false,
+      "tasks": [],
+      "answer": "数据不支持本请求：商家营销线索属于B2B商家潜客，消费者到访属于B2C访问事件，分析对象与粒度不兼容。没有消费者访问日志，不能把线索、订单或付费客户数改作访问分母；用户同意也不能使其成为真实消费者转化率。"
+    }
+  ],
+  "source_hashes": {
+    "ops_agent/__init__.py": "cb3623156d849c0094aae8383527a8eacb96376b47fccc4dfcc78bbc3997f047",
+    "ops_agent/__main__.py": "ab77f029c5a442a17a6bc79b32251eb37f8e17da1ef018c1503375d9e1c210ac",
+    "ops_agent/agent.py": "56cd3910285d2e66e439366c2c26db0f5db1a9c0c3308503507a26760dd8e741",
+    "ops_agent/analysis.py": "1281d8049def53010deacde3831e850be55bf7ce259c54babd8d301590af3936",
+    "ops_agent/contracts.py": "ce614b51906df57f39af6ac235020ecb7735608020093ed7fb9ca8008076e329",
+    "ops_agent/evaluation.py": "5cf8a93dee598b6114fba35492acb4e757abf74d168b075eb928c24c4ac87cc3",
+    "ops_agent/evaluation_report.py": "cdc382ccfd5237a7f9993f1be2e8d6d76f722cd4d12adf6dfa071cb1aeb38221",
+    "ops_agent/evaluation_v2.py": "1e0d579a25b28d6c81fc438eb2af5407803b4a744eda7b0087b757dd316e68e0",
+    "ops_agent/evaluation_v2_report.py": "aef5f28c534ac7422203b3ab0ac59993bb9f40d57809505a3d4250366fca3fbc",
+    "ops_agent/evaluation_v3.py": "fc8f9d6deca0dfbf338014dd06b63138c0265f7a0a29e33e6b7763d31667fb10",
+    "ops_agent/evaluation_v3_report.py": "a6f155e08a93385c495fc24f7945e546228380171d7be2a3788f8c46338b9e44",
+    "ops_agent/evaluation_v4.py": "5c084841f915ba21ffef7aec53cc55655ba7c8b9acabe64d4180d6332e79cfb2",
+    "ops_agent/evaluation_v4_report.py": "fab8d1e62bc27f3581ecfe2536b0d32aa79dd0cb81343b6f28e49d2bfea9a11d",
+    "ops_agent/model_config.py": "ea18a1d7b285cdb57650d4bfba065eb3ac93ab816ffb3580adc8108f5afded2c",
+    "ops_agent/prepare.py": "a990ebbbf11c25ee1e59bd21e682e9ba02fd11d94363f8e0286be9ba59dff180",
+    "ops_agent/request_policy.py": "b0a128855dd82ad9d4075db999349b8a1eb4e309025a70338eea695574b50d88",
+    "ops_agent/server.py": "43ec2ee365dc340539df1d617b07a51052eda3faf6658c57e57d590abbc05eae",
+    "ops_agent/showcase.py": "a1090688c99bba913142507c480f367a5a3522c123d2c5f4d66bf1e64161c0e6",
+    "ops_agent/views.py": "1878189764f0fb6457a284151ce65a628848b253b10b5887d8c1919d5eb2156f"
+  },
+  "limitations": [
+    "No additional real model calls; live v5 model behavior remains unverified.",
+    "No independent external blind test or realized business gains."
+  ]
+}

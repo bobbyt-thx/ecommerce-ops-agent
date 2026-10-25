@@ -1,0 +1,615 @@
+{
+  "generated_utc": "2026-10-25T18:24:23.801332+00:00",
+  "tables": {
+    "customers": {
+      "rows": 99441,
+      "columns": [
+        "customer_id",
+        "customer_unique_id",
+        "customer_zip_code_prefix",
+        "customer_city",
+        "customer_state"
+      ],
+      "exact_duplicate_rows": 0,
+      "candidate_key": [
+        "customer_id"
+      ],
+      "duplicate_key_rows": 0,
+      "null_key_rows": 0,
+      "nulls": {}
+    },
+    "geolocation": {
+      "rows": 1000163,
+      "columns": [
+        "geolocation_zip_code_prefix",
+        "geolocation_lat",
+        "geolocation_lng",
+        "geolocation_city",
+        "geolocation_state"
+      ],
+      "exact_duplicate_rows": 261831,
+      "candidate_key": null,
+      "duplicate_key_rows": null,
+      "null_key_rows": null,
+      "nulls": {}
+    },
+    "items": {
+      "rows": 112650,
+      "columns": [
+        "order_id",
+        "order_item_id",
+        "product_id",
+        "seller_id",
+        "shipping_limit_date",
+        "price",
+        "freight_value"
+      ],
+      "exact_duplicate_rows": 0,
+      "candidate_key": [
+        "order_id",
+        "order_item_id"
+      ],
+      "duplicate_key_rows": 0,
+      "null_key_rows": 0,
+      "nulls": {}
+    },
+    "payments": {
+      "rows": 103886,
+      "columns": [
+        "order_id",
+        "payment_sequential",
+        "payment_type",
+        "payment_installments",
+        "payment_value"
+      ],
+      "exact_duplicate_rows": 0,
+      "candidate_key": [
+        "order_id",
+        "payment_sequential"
+      ],
+      "duplicate_key_rows": 0,
+      "null_key_rows": 0,
+      "nulls": {}
+    },
+    "reviews": {
+      "rows": 99224,
+      "columns": [
+        "review_id",
+        "order_id",
+        "review_score",
+        "review_comment_title",
+        "review_comment_message",
+        "review_creation_date",
+        "review_answer_timestamp"
+      ],
+      "exact_duplicate_rows": 0,
+      "candidate_key": null,
+      "duplicate_key_rows": null,
+      "null_key_rows": null,
+      "nulls": {
+        "review_comment_title": 87656,
+        "review_comment_message": 58247
+      }
+    },
+    "orders": {
+      "rows": 99441,
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_status",
+        "order_purchase_timestamp",
+        "order_approved_at",
+        "order_delivered_carrier_date",
+        "order_delivered_customer_date",
+        "order_estimated_delivery_date"
+      ],
+      "exact_duplicate_rows": 0,
+      "candidate_key": [
+        "order_id"
+      ],
+      "duplicate_key_rows": 0,
+      "null_key_rows": 0,
+      "nulls": {
+        "order_approved_at": 160,
+        "order_delivered_carrier_date": 1783,
+        "order_delivered_customer_date": 2965
+      }
+    },
+    "products": {
+      "rows": 32951,
+      "columns": [
+        "product_id",
+        "product_category_name",
+        "product_name_lenght",
+        "product_description_lenght",
+        "product_photos_qty",
+        "product_weight_g",
+        "product_length_cm",
+        "product_height_cm",
+        "product_width_cm"
+      ],
+      "exact_duplicate_rows": 0,
+      "candidate_key": [
+        "product_id"
+      ],
+      "duplicate_key_rows": 0,
+      "null_key_rows": 0,
+      "nulls": {
+        "product_category_name": 610,
+        "product_name_lenght": 610,
+        "product_description_lenght": 610,
+        "product_photos_qty": 610,
+        "product_weight_g": 2,
+        "product_length_cm": 2,
+        "product_height_cm": 2,
+        "product_width_cm": 2
+      }
+    },
+    "sellers": {
+      "rows": 3095,
+      "columns": [
+        "seller_id",
+        "seller_zip_code_prefix",
+        "seller_city",
+        "seller_state"
+      ],
+      "exact_duplicate_rows": 0,
+      "candidate_key": [
+        "seller_id"
+      ],
+      "duplicate_key_rows": 0,
+      "null_key_rows": 0,
+      "nulls": {}
+    },
+    "categories": {
+      "rows": 71,
+      "columns": [
+        "product_category_name",
+        "product_category_name_english"
+      ],
+      "exact_duplicate_rows": 0,
+      "candidate_key": [
+        "product_category_name"
+      ],
+      "duplicate_key_rows": 0,
+      "null_key_rows": 0,
+      "nulls": {}
+    },
+    "deals": {
+      "rows": 842,
+      "columns": [
+        "mql_id",
+        "seller_id",
+        "sdr_id",
+        "sr_id",
+        "won_date",
+        "business_segment",
+        "lead_type",
+        "lead_behaviour_profile",
+        "has_company",
+        "has_gtin",
+        "average_stock",
+        "business_type",
+        "declared_product_catalog_size",
+        "declared_monthly_revenue"
+      ],
+      "exact_duplicate_rows": 0,
+      "candidate_key": [
+        "mql_id"
+      ],
+      "duplicate_key_rows": 0,
+      "null_key_rows": 0,
+      "nulls": {
+        "business_segment": 1,
+        "lead_type": 6,
+        "lead_behaviour_profile": 177,
+        "has_company": 779,
+        "has_gtin": 778,
+        "average_stock": 776,
+        "business_type": 10,
+        "declared_product_catalog_size": 773
+      }
+    },
+    "leads": {
+      "rows": 8000,
+      "columns": [
+        "mql_id",
+        "first_contact_date",
+        "landing_page_id",
+        "origin"
+      ],
+      "exact_duplicate_rows": 0,
+      "candidate_key": [
+        "mql_id"
+      ],
+      "duplicate_key_rows": 0,
+      "null_key_rows": 0,
+      "nulls": {
+        "origin": 60
+      }
+    }
+  },
+  "relations": [
+    {
+      "from": "orders.customer_id",
+      "to": "customers.customer_id",
+      "non_null_rows": 99441,
+      "null_rows": 0,
+      "unmatched_rows": 0,
+      "matched_rows": 99441
+    },
+    {
+      "from": "items.order_id",
+      "to": "orders.order_id",
+      "non_null_rows": 112650,
+      "null_rows": 0,
+      "unmatched_rows": 0,
+      "matched_rows": 112650
+    },
+    {
+      "from": "items.product_id",
+      "to": "products.product_id",
+      "non_null_rows": 112650,
+      "null_rows": 0,
+      "unmatched_rows": 0,
+      "matched_rows": 112650
+    },
+    {
+      "from": "items.seller_id",
+      "to": "sellers.seller_id",
+      "non_null_rows": 112650,
+      "null_rows": 0,
+      "unmatched_rows": 0,
+      "matched_rows": 112650
+    },
+    {
+      "from": "payments.order_id",
+      "to": "orders.order_id",
+      "non_null_rows": 103886,
+      "null_rows": 0,
+      "unmatched_rows": 0,
+      "matched_rows": 103886
+    },
+    {
+      "from": "reviews.order_id",
+      "to": "orders.order_id",
+      "non_null_rows": 99224,
+      "null_rows": 0,
+      "unmatched_rows": 0,
+      "matched_rows": 99224
+    },
+    {
+      "from": "products.product_category_name",
+      "to": "categories.product_category_name",
+      "non_null_rows": 32341,
+      "null_rows": 610,
+      "unmatched_rows": 13,
+      "matched_rows": 32328
+    },
+    {
+      "from": "deals.mql_id",
+      "to": "leads.mql_id",
+      "non_null_rows": 842,
+      "null_rows": 0,
+      "unmatched_rows": 0,
+      "matched_rows": 842
+    },
+    {
+      "from": "deals.seller_id",
+      "to": "sellers.seller_id",
+      "non_null_rows": 842,
+      "null_rows": 0,
+      "unmatched_rows": 462,
+      "matched_rows": 380
+    }
+  ],
+  "warnings": [
+    "历史公开数据不是实时业务；首尾月份不保证完整，默认分析区间显式限定。",
+    "主数据与商家线索是不同观察窗口，不能拼成消费者转化漏斗。",
+    "一单多商品/支付/评价会产生联表膨胀，必须先归并到所需粒度。",
+    "评价和最终送达时间属于订单级，多商家订单不能直接归责给单个商家。",
+    "缺少成本、访问、广告支出和运营实验，无法计算利润、访问转化或干预因果效果。"
+  ],
+  "purchase_range": [
+    "2016-09-04 21:15:19",
+    "2018-10-17 17:30:18"
+  ],
+  "last_observed_delivery": "2018-10-17 13:22:46",
+  "monthly_status_counts": {
+    "2016-09": {
+      "approved": 0,
+      "canceled": 2,
+      "created": 0,
+      "delivered": 1,
+      "invoiced": 0,
+      "processing": 0,
+      "shipped": 1,
+      "unavailable": 0
+    },
+    "2016-10": {
+      "approved": 0,
+      "canceled": 24,
+      "created": 0,
+      "delivered": 265,
+      "invoiced": 18,
+      "processing": 2,
+      "shipped": 8,
+      "unavailable": 7
+    },
+    "2016-12": {
+      "approved": 0,
+      "canceled": 0,
+      "created": 0,
+      "delivered": 1,
+      "invoiced": 0,
+      "processing": 0,
+      "shipped": 0,
+      "unavailable": 0
+    },
+    "2017-01": {
+      "approved": 0,
+      "canceled": 3,
+      "created": 0,
+      "delivered": 750,
+      "invoiced": 12,
+      "processing": 9,
+      "shipped": 16,
+      "unavailable": 10
+    },
+    "2017-02": {
+      "approved": 1,
+      "canceled": 17,
+      "created": 0,
+      "delivered": 1653,
+      "invoiced": 11,
+      "processing": 32,
+      "shipped": 21,
+      "unavailable": 45
+    },
+    "2017-03": {
+      "approved": 0,
+      "canceled": 33,
+      "created": 0,
+      "delivered": 2546,
+      "invoiced": 3,
+      "processing": 23,
+      "shipped": 45,
+      "unavailable": 32
+    },
+    "2017-04": {
+      "approved": 1,
+      "canceled": 18,
+      "created": 0,
+      "delivered": 2303,
+      "invoiced": 14,
+      "processing": 10,
+      "shipped": 49,
+      "unavailable": 9
+    },
+    "2017-05": {
+      "approved": 0,
+      "canceled": 29,
+      "created": 0,
+      "delivered": 3546,
+      "invoiced": 16,
+      "processing": 23,
+      "shipped": 55,
+      "unavailable": 31
+    },
+    "2017-06": {
+      "approved": 0,
+      "canceled": 16,
+      "created": 0,
+      "delivered": 3135,
+      "invoiced": 11,
+      "processing": 12,
+      "shipped": 47,
+      "unavailable": 24
+    },
+    "2017-07": {
+      "approved": 0,
+      "canceled": 28,
+      "created": 0,
+      "delivered": 3872,
+      "invoiced": 7,
+      "processing": 11,
+      "shipped": 56,
+      "unavailable": 52
+    },
+    "2017-08": {
+      "approved": 0,
+      "canceled": 27,
+      "created": 0,
+      "delivered": 4193,
+      "invoiced": 20,
+      "processing": 18,
+      "shipped": 41,
+      "unavailable": 32
+    },
+    "2017-09": {
+      "approved": 0,
+      "canceled": 20,
+      "created": 0,
+      "delivered": 4150,
+      "invoiced": 17,
+      "processing": 22,
+      "shipped": 38,
+      "unavailable": 38
+    },
+    "2017-10": {
+      "approved": 0,
+      "canceled": 26,
+      "created": 0,
+      "delivered": 4478,
+      "invoiced": 16,
+      "processing": 20,
+      "shipped": 33,
+      "unavailable": 58
+    },
+    "2017-11": {
+      "approved": 0,
+      "canceled": 37,
+      "created": 2,
+      "delivered": 7289,
+      "invoiced": 35,
+      "processing": 25,
+      "shipped": 72,
+      "unavailable": 84
+    },
+    "2017-12": {
+      "approved": 0,
+      "canceled": 11,
+      "created": 2,
+      "delivered": 5513,
+      "invoiced": 13,
+      "processing": 35,
+      "shipped": 57,
+      "unavailable": 42
+    },
+    "2018-01": {
+      "approved": 0,
+      "canceled": 34,
+      "created": 0,
+      "delivered": 7069,
+      "invoiced": 15,
+      "processing": 29,
+      "shipped": 74,
+      "unavailable": 48
+    },
+    "2018-02": {
+      "approved": 0,
+      "canceled": 73,
+      "created": 1,
+      "delivered": 6555,
+      "invoiced": 6,
+      "processing": 6,
+      "shipped": 57,
+      "unavailable": 30
+    },
+    "2018-03": {
+      "approved": 0,
+      "canceled": 26,
+      "created": 0,
+      "delivered": 7003,
+      "invoiced": 23,
+      "processing": 9,
+      "shipped": 133,
+      "unavailable": 17
+    },
+    "2018-04": {
+      "approved": 0,
+      "canceled": 15,
+      "created": 0,
+      "delivered": 6798,
+      "invoiced": 14,
+      "processing": 8,
+      "shipped": 99,
+      "unavailable": 5
+    },
+    "2018-05": {
+      "approved": 0,
+      "canceled": 24,
+      "created": 0,
+      "delivered": 6749,
+      "invoiced": 24,
+      "processing": 6,
+      "shipped": 54,
+      "unavailable": 16
+    },
+    "2018-06": {
+      "approved": 0,
+      "canceled": 18,
+      "created": 0,
+      "delivered": 6099,
+      "invoiced": 3,
+      "processing": 0,
+      "shipped": 43,
+      "unavailable": 4
+    },
+    "2018-07": {
+      "approved": 0,
+      "canceled": 41,
+      "created": 0,
+      "delivered": 6159,
+      "invoiced": 13,
+      "processing": 1,
+      "shipped": 60,
+      "unavailable": 18
+    },
+    "2018-08": {
+      "approved": 0,
+      "canceled": 84,
+      "created": 0,
+      "delivered": 6351,
+      "invoiced": 23,
+      "processing": 0,
+      "shipped": 47,
+      "unavailable": 7
+    },
+    "2018-09": {
+      "approved": 0,
+      "canceled": 15,
+      "created": 0,
+      "delivered": 0,
+      "invoiced": 0,
+      "processing": 0,
+      "shipped": 1,
+      "unavailable": 0
+    },
+    "2018-10": {
+      "approved": 0,
+      "canceled": 4,
+      "created": 0,
+      "delivered": 0,
+      "invoiced": 0,
+      "processing": 0,
+      "shipped": 0,
+      "unavailable": 0
+    }
+  },
+  "special_cases": {
+    "orders_without_items": 775,
+    "orders_without_payments": 1,
+    "orders_without_reviews": 768,
+    "orders_with_multiple_items": 9803,
+    "orders_with_multiple_sellers": 1278,
+    "orders_with_multiple_payments": 2961,
+    "orders_with_multiple_reviews": 547,
+    "orders_with_conflicting_review_scores": 202,
+    "delivery_before_purchase": 0,
+    "delivered_missing_actual_date": 8,
+    "missing_estimated_date": 0,
+    "nonpositive_item_prices": 0,
+    "negative_freight": 0,
+    "invalid_purchase_timestamps": 0,
+    "invalid_delivery_timestamps": 0,
+    "invalid_estimate_timestamps": 0,
+    "review_score_outside_1_to_5": 0
+  },
+  "payment_reconciliation": {
+    "orders_with_both": 98665,
+    "difference_over_1_cent": 303,
+    "max_absolute_difference_brl": 182.81,
+    "note": "商品金额、运费及支付额保留各自口径，不将差异直接视为退款或利润。"
+  },
+  "join_fanout": {
+    "raw_item_amount_brl": 13591643.7,
+    "naive_items_payments_reviews_left_join_brl": 14273699.65
+  },
+  "marketing_linkage": {
+    "mql_rows": 8000,
+    "closed_deal_rows": 842,
+    "unique_closed_sellers": 842,
+    "closed_sellers_with_observed_order_items": 380,
+    "closed_sellers_not_observed_in_items": 462,
+    "first_contact_range": [
+      "2017-06-14",
+      "2018-05-31"
+    ],
+    "won_range": [
+      "2017-12-05 02:00:00",
+      "2018-11-14 18:04:19"
+    ],
+    "note": "线索为抽样数据；未关联不能等同未经营。成交日期超出订单覆盖范围时不可评估后续表现。"
+  }
+}
